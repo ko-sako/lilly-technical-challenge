@@ -1,4 +1,5 @@
 const apiUrl = 'http://localhost:8000/medicines'
+const formApiUrl = 'http://localhost:8000/create'
 
 fetch(apiUrl)
     .then(res => {
@@ -46,9 +47,31 @@ fetch(apiUrl)
 document.getElementById('product-form').addEventListener('submit', function (e) {
     e.preventDefault(); // Prevent reload the page
 
-    const name = document.getElementById('name-input').value;
-    const price = document.getElementById('price-input').value;
+    //const name = document.getElementById('name-input').value;
+    //const price = document.getElementById('price-input').value;
 
-    console.log(name);
-    console.log(price);
-})
+    // console.log(name);
+    // console.log(price);
+
+    const form = document.getElementById('product-form');
+    const formData = new FormData(form); // Add form's data into FormData
+
+    // Send to POST API
+    fetch(formApiUrl, {
+        method: 'POST',
+        body: formData,
+    })
+        .then(res => {
+            if (!res.ok) throw new Error('Sending Error');
+            return res.json();
+        })
+        .then(data => {
+            console.log('Sent Data')
+            // Reset form input value
+            document.getElementById('product-form').reset();
+
+        })
+        .catch(err => {
+            console.error('Error: ', err);
+        });
+});
