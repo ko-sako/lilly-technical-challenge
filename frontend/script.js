@@ -8,16 +8,29 @@ fetch(apiUrl)
     .then(data => {
         const tbody = document.getElementById('product-table');
         data.medicines.forEach(item => {
-            const name_str = item.name;
-            console.log(name_str);
-            console.log(`${item.price}`);
             const tr = document.createElement('tr');
 
             const nameTd = document.createElement('td');
-            nameTd.textContent = item.name;
+            const name = item.name;
+
+            // Handling the missing or error value of the product name.
+            if (typeof name === 'string' && name.trim() !== '') {
+                nameTd.textContent = item.name;
+            } else {
+                nameTd.textContent = 'Unknown';
+                nameTd.classList.add('error-value');
+            }
 
             const priceTd = document.createElement('td');
-            priceTd.textContent = item.price;
+            const price = item.price;
+
+            // Handling the missing or error value of the product price.
+            if (typeof price === 'number' && !isNaN(price)) {
+                priceTd.textContent = item.price;
+            } else {
+                priceTd.textContent = 'Unknown';
+                priceTd.classList.add('error-value');
+            }
 
             tr.appendChild(nameTd);
             tr.appendChild(priceTd);
