@@ -47,11 +47,19 @@ fetch(apiUrl)
 document.getElementById('product-form').addEventListener('submit', function (e) {
     e.preventDefault(); // Prevent reload the page
 
-    //const name = document.getElementById('name-input').value;
-    //const price = document.getElementById('price-input').value;
+    const nameInput = document.getElementById('name-input').value;
+    const priceInput = document.getElementById('price-input').value;
 
-    // console.log(name);
-    // console.log(price);
+    // Basic Validation
+    if (!nameInput) {
+        alert("Please input product name.");
+        return;
+    }
+
+    if (!priceInput || isNaN(priceInput) || Number(priceInput) < 0) {
+        alert("Please enter a number greater than or equal to 0 for the price.");
+        return;
+    }
 
     const form = document.getElementById('product-form');
     const formData = new FormData(form); // Add form's data into FormData
