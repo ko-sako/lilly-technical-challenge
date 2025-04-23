@@ -14,6 +14,7 @@
         <h1>Medicine Tracker</h1>
     </header>
     <main>
+        <h2>Medicine List</h2>
         <table class="product-table" id="product-table">
             <thead>
             <tr>
@@ -24,6 +25,15 @@
             <!-- Add row using JavaScript -->
             </tbody>
         </table>
+
+        <h2>Submit Medicine Data</h2>
+        <form id="product-form">
+            <label for="name-input">NAME</label>
+            <input type="text" id="name-input" placeholder="e.g. Elixirium" required />
+            <label for="price-input">PRICE</label>
+            <input type="number" id="price-input" placeholder="e.g. 5.99" required>
+            <button type="submit">Submit</button>
+        </form>
     </main>
     <script src="script.js"></script>
 </body>
