@@ -11,7 +11,16 @@ fetch(apiUrl)
             const tr = document.createElement('tr');
 
             const nameTd = document.createElement('td');
-            nameTd.textContent = item.name;
+            // nameTd.textContent = item.name;
+            const name = item.name;
+            console.log(isNaN(name));
+            // Handling the missing or error value of the product name.
+            if (typeof name === 'string' && name.trim() !== '') {
+                nameTd.textContent = item.name;
+            } else {
+                nameTd.textContent = 'Unknown';
+                nameTd.classList.add('error-value');
+            }
 
             const priceTd = document.createElement('td');
             priceTd.textContent = item.price;
