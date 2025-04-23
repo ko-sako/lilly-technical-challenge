@@ -11,9 +11,8 @@ fetch(apiUrl)
             const tr = document.createElement('tr');
 
             const nameTd = document.createElement('td');
-            // nameTd.textContent = item.name;
             const name = item.name;
-            console.log(isNaN(name));
+
             // Handling the missing or error value of the product name.
             if (typeof name === 'string' && name.trim() !== '') {
                 nameTd.textContent = item.name;
@@ -23,7 +22,15 @@ fetch(apiUrl)
             }
 
             const priceTd = document.createElement('td');
-            priceTd.textContent = item.price;
+            const price = item.price;
+
+            // Handling the missing or error value of the product price.
+            if (typeof price === 'number' && !isNaN(price)) {
+                priceTd.textContent = item.price;
+            } else {
+                priceTd.textContent = 'Unknown';
+                priceTd.classList.add('error-value');
+            }
 
             tr.appendChild(nameTd);
             tr.appendChild(priceTd);
