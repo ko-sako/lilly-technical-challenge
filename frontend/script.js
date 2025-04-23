@@ -8,9 +8,6 @@ fetch(apiUrl)
     .then(data => {
         const tbody = document.getElementById('product-table');
         data.medicines.forEach(item => {
-            const name_str = item.name;
-            console.log(name_str);
-            console.log(`${item.price}`);
             const tr = document.createElement('tr');
 
             const nameTd = document.createElement('td');
