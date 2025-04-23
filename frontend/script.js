@@ -41,3 +41,14 @@ fetch(apiUrl)
     .catch(err => {
         console.error('Error: ', err);
     });
+
+// Form Submission
+document.getElementById('product-form').addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent reload the page
+
+    const name = document.getElementById('name-input').value;
+    const price = document.getElementById('price-input').value;
+
+    console.log(name);
+    console.log(price);
+})
