@@ -26,14 +26,33 @@
             </tbody>
         </table>
 
-        <h2>Submit Medicine Data</h2>
-        <form id="product-form">
-            <label for="name-input">NAME</label>
-            <input type="text" name="name" id="name-input" placeholder="e.g. Elixirium" required />
-            <label for="price-input">PRICE</label>
-            <input type="number" name="price" min="0" step="0.01" id="price-input" placeholder="e.g. 5.99" required />
-            <button type="submit">Submit</button>
-        </form>
+        <section id="submit-medicine-data">
+            <h2>Submit Medicine Data</h2>
+            <form id="product-form">
+                <label for="name-input">NAME</label>
+                <input type="text" name="name" id="name-input" placeholder="e.g. Elixirium" required />
+                <label for="price-input">PRICE</label>
+                <input type="number" name="price" min="0" step="0.01" id="price-input" placeholder="e.g. 5.99" required />
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <section id="average-price">
+            <h2>Average Medicine Price</h2>
+            <button id="calc-average-btn">Calculate Average Price</button>
+            <table class="average-table" id="average-table">
+                <thead>
+                <tr>
+                    <th>AVERAGE PRICE</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <!-- Add value using JavaScript -->
+                        <td id="average-value">Press the AVERAGE PRICE button to calculate the average price of all medicines.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
     </main>
     <script src="script.js"></script>
 </body>
