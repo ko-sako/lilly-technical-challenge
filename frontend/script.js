@@ -1,5 +1,6 @@
-const apiUrl = 'http://localhost:8000/medicines'
-const formApiUrl = 'http://localhost:8000/create'
+const apiUrl = 'http://localhost:8000/medicines';
+const formApiUrl = 'http://localhost:8000/create';
+const aveApiUrl = 'http://localhost:8000/average_price';
 
 // Display Medicines List Function
 function loadMedicinesList() {
@@ -88,5 +89,31 @@ document.getElementById('product-form').addEventListener('submit', function (e) 
             console.error('Error: ', err);
         });
 });
+
+// Display Average Price
+document.getElementById("calc-average-btn").addEventListener("click", () => {
+    const averageCell = document.getElementById("average-value");
+    averageCell.textContent = "Calculating...";
+
+    fetch(aveApiUrl)
+        .then(res => {
+            if (!res.ok) {
+                throw new Error("Network response was not ok");
+            }
+            return res.json();
+        })
+        .then(data => {
+            if (data.average_price === null) {
+                averageCell.textContent = "No valid data to calculate average.";
+            } else {
+                averageCell.textContent = `${data.average_price}`;
+            }
+        })
+        .catch(err => {
+            averageCell.textContent = "Error fetching average price.";
+            console.error('Error: ', err);
+        });
+
+})
 
 window.onload = loadMedicinesList; // Call loadMedicineList function when the page loaded.
