@@ -78,7 +78,10 @@ th {
 h1, h2 {
     text-align: center;
     color: #222;
-    margin: 4rem;
+    margin: 3rem;
+}
+h2 {
+    margin: 1.5rem;
 }
 
 /* Line under h2 */
@@ -100,5 +103,9 @@ button {
     cursor: pointer;
     display: block;
     margin: 20px auto;
+}
+
+section {
+    margin-bottom: 8rem;
 }
 
