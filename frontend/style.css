@@ -32,21 +32,80 @@ body {
 /* ---- Your custom styles below ---- */
 
 table {
+    margin: 0 auto;
     width: 60%;
     border-collapse: collapse;
+    background-color: white;
     margin-top: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-th, td {
-    border: 1px solid #ccc;
-    padding: 8px;
+thead {
+    border-bottom: 2px solid #d32f2f;
+}
+
+table td, table th {
+    padding: 24px 60px;
     text-align: left;
 }
 
+tr:nth-child(2n) {
+    background-color: #eee;
+}
+
+#submit-table tr {
+    background-color: white;
+}
+
+#submit-table td,
+#submit-table th {
+    text-align: center;
+}
+
+#average-table td,
+#average-table th {
+    text-align: center;
+}
+
 th {
-    background-color: #f0f0f0;
+    background-color: #fff;
 }
 
 .error-value {
-    color: red;
+    color: #D32B1E;
 }
+
+h1, h2 {
+    text-align: center;
+    color: #222;
+    margin: 3rem;
+}
+h2 {
+    margin: 1.5rem;
+}
+
+/* Line under h2 */
+h2::after {
+    content: "";
+    display: block;
+    width: 72px; /* Line length */
+    height: 5px; /* Line height */
+    background-color: #D32B1E;
+    margin: 25px auto 0;
+}
+
+button {
+    background-color: #D32B1E;
+    color: white;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+}
+
+section {
+    margin-bottom: 8rem;
+}
+

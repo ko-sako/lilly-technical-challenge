@@ -14,26 +14,44 @@
         <h1>Medicine Tracker</h1>
     </header>
     <main>
-        <h2>Medicine List</h2>
-        <table class="product-table" id="product-table">
-            <thead>
-                <tr>
-                    <th>NAME</th>
-                    <th>PRICE</th>
-                </tr>
-            </thead>
-            <tbody id="product-table-body">
-            <!-- Add row using JavaScript -->
-            </tbody>
-        </table>
+        <section id="medicine-list">
+            <h2>Medicine List</h2>
+            <table class="product-table" id="product-table">
+                <thead>
+                    <tr>
+                        <th>NAME</th>
+                        <th>PRICE</th>
+                    </tr>
+                </thead>
+                <tbody id="product-table-body">
+                <!-- Add row using JavaScript -->
+                </tbody>
+            </table>
+        </section>
 
         <section id="submit-medicine-data">
             <h2>Submit Medicine Data</h2>
             <form id="product-form">
-                <label for="name-input">NAME</label>
-                <input type="text" name="name" id="name-input" placeholder="e.g. Elixirium" required />
-                <label for="price-input">PRICE</label>
-                <input type="number" name="price" min="0" step="0.01" id="price-input" placeholder="e.g. 5.99" required />
+                <table id="submit-table">
+                    <thead>
+                        <tr>
+                            <th>
+                                <label for="name-input">NAME</label>
+                            </th>
+                            <th>
+                                <label for="price-input">PRICE</label>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td>
+                            <input type="text" name="name" id="name-input" placeholder="e.g. Elixirium" required />
+                        </td>
+                        <td>
+                            <input type="number" name="price" min="0" step="0.01" id="price-input" placeholder="e.g. 5.99" required />
+                        </td>
+                    </tr>
+                </table>
                 <button type="submit">Submit</button>
             </form>
         </section>
