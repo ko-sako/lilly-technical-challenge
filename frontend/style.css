@@ -2,6 +2,7 @@
 
 /* CSS Reset */
 * {
+    font-family: Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
     box-sizing: border-box;
 }
 
