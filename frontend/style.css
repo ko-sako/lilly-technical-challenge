@@ -77,3 +77,14 @@ h2::after {
     background-color: #D32B1E;
     margin: 25px auto 0;
 }
+
+button {
+    background-color: #D32B1E;
+    color: white;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+}
