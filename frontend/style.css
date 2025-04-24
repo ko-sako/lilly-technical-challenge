@@ -2,7 +2,6 @@
 
 /* CSS Reset */
 * {
-    font-family: Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
     box-sizing: border-box;
 }
 
@@ -50,4 +49,19 @@ th {
 
 .error-value {
     color: red;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #222;
+    margin: 4rem;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 72px; /* Line length */
+    height: 5px; /* Line height */
+    background-color: #D32B1E;
+    margin: 25px auto 0;
 }
