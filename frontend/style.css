@@ -44,7 +44,6 @@ thead {
     border-bottom: 2px solid #d32f2f;
 }
 
-
 table td, table th {
     padding: 24px 60px;
     text-align: left;
@@ -52,6 +51,20 @@ table td, table th {
 
 tr:nth-child(2n) {
     background-color: #eee;
+}
+
+#submit-table tr {
+    background-color: white;
+}
+
+#submit-table td,
+#submit-table th {
+    text-align: center;
+}
+
+#average-table td,
+#average-table th {
+    text-align: center;
 }
 
 th {
@@ -88,3 +101,4 @@ button {
     display: block;
     margin: 20px auto;
 }
+
