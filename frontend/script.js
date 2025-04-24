@@ -10,7 +10,7 @@ function loadMedicinesList() {
             return res.json();
         })
         .then(data => {
-            const tbody = document.getElementById('product-table');
+            const tbody = document.getElementById('product-table-body');
             tbody.innerHTML = ''; // Clear previous list
 
             data.medicines.forEach(item => {
