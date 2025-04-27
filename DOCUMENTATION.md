@@ -104,6 +104,29 @@ This modular approach allows for easier debugging, testing, and future expansion
 
 ## Problems Faced
 *Use this space to document and discuss any issues you faced while undertaking this challenge and how you solved them. We recommend doing this proactively as you experience and resolve the issues - make sure you don't forget! (Screenshots are helpful, though not required)*.
+### Medicine List Header was Missing
+The function that reloads the table to display the current product data does not care about the headers, causing them to disappear.
+#### What was the route cause:
+The `loadMedicinesList()` function was refreshing the entire table, which included the `thead` section.
+#### What I did:
+I added `id="product-table-body"` to the tbody and updated the function to refresh only the table body (`tbody`).
+```html
+<table class="product-table" id="product-table">
+<thead>
+<tr>
+<th>NAME</th>
+<th>PRICE</th>
+</tr>
+</thead>
+<tbody id="product-table-body">
+<!-- Add row using JavaScript -->
+</tbody>
+</table>
+```
+```js
+const tbody = document.getElementById('product-table-body');
+tbody.innerHTML = ''; // Clear previous list
+```
 
 ## Evaluation
 *How did you feel about the challenge overall? Did some parts go better than others? Did you run out of time? If you were to do this again, and were given more time, what would you do differently?*
