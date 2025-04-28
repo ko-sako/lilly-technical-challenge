@@ -39,7 +39,7 @@ For instance, styling and less critical parts were done later, so the system rem
 *For the challenge objectives, did you do anything in a particular way that you want to discuss? Is there anything you're particularly proud of that you want to highlight? Did you attempt some objectives multiple times, or go back and re-write particular sections of code? If so, why? Use this space to document any key points you'd like to tell us about.*
 ### Error Handling
 #### API Request Error Handling
-When making data requests to the FastAPI backend from the frontend, I wrapped the request in a try-catch block to ensure that, in the event of a server or network error, the issue would be caught and logged in the console.
+When making data requests to the FastAPI backend from the frontend, I wrapped the request in a then-catch block to ensure that, in the event of a server or network error, the issue would be caught and logged in the console.
 This prevents unhandled failures from interrupting the user experience and provides useful debugging information during development.
 ```js
 .catch(err => {
@@ -47,6 +47,12 @@ This prevents unhandled failures from interrupting the user experience and provi
     console.error('Error: ', err);
 });
 ```
+In addition, for HTTP status code errors (e.g., 404 or 500) caused by invalid responses, I utilised `throw` statement to raise an exception manually and catch it with `.catch()`.
+```js
+if (!res.ok) throw new Error('Connection Error');
+return res.json();
+```
+With these, typical communication failures and server response failures are covered.
 
 #### Data Exception Handling
 When calculating the average price in the GET API I implemented, I added quality checks for the data being fetched.
